@@ -30,17 +30,20 @@
     <div class="container">
         <h1>Ihr neuer Praxis-Assistent steht bereit!</h1>
         <p>Hallo Therapieteam Rheine,<br><br>
-        dies ist eine Live-Vorschau. Klicken Sie einfach unten rechts auf das Chat-Symbol, um Ihren individuellen KI-Assistenten zu testen.</p>
+        dies ist eine Live-Vorschau. Ihr individueller KI-Assistent öffnet sich jetzt vollautomatisch unten rechts.</p>
     </div>
 
-    <!-- Dein funktionierender Botpress-Code ist hier bereits integriert -->
+    <!-- Botpress Scripte -->
     <script src="https://botpress.cloud"></script>
     <script src="https://bpcontent.cloud" defer></script>
 
+    <!-- Code für das automatische Öffnen -->
+    <script>
+        window.botpress.on('webchat:initialized', () => {
+            window.botpress.open();
+        });
+    </script>
+
 </body>
 </html>
-<script>
-    window.botpress.on('webchat:ready', () => {
-        window.botpress.open();
-    });
-</script>
+
